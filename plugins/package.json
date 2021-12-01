@@ -1,17 +1,18 @@
 {
   "name": "dyl-plugins",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "description": "react typescript plugins",
   "engines": {
     "node": "^10.12.0 || >=12.0.0"
   },
-  "main": "./index.js",
+  "bugs": {
+    "url": "https://github.com/LOVINGFINE/dyl-tools/issues"
+  },
+  "main": "lib/index.js",
   "files": [
-    "lib",
-    "types",
-    "index.js"
+    "lib/**/*"
   ],
-  "types": "./umd/type.d.ts",
+  "types": "lib/index.d.ts",
   "devDependencies": {
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",

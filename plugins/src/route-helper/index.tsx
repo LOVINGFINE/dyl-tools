@@ -1,8 +1,30 @@
 import { lazy, ReactElement } from "react";
 import { Route, Routes, Outlet } from "react-router-dom";
-import { RouteItem, DynamicRouteProviderProps } from "../../types/route-helper";
 
-const DynamicRouteProvider = ({
+export interface DynamicRouteProviderProps {
+  routes: RouteItem[];
+}
+export interface RouteItem {
+  name: string;
+  exact?: boolean;
+  title?: string;
+  component?: string;
+  icon?: string | React.ReactElement;
+  path?: string;
+  redirect?: string;
+  routes?: Array<RouteItem>;
+  parent?: RouteItem;
+}
+export interface RouteConsumerOptions {
+  name: string;
+  exact?: boolean;
+  title?: string;
+  component?: string;
+  icon?: string | React.ReactElement;
+  redirect?: string;
+  parent?: RouteItem;
+}
+export const DynamicRouteProvider = ({
   routes,
 }: DynamicRouteProviderProps): ReactElement => {
   const render = (list: RouteItem[]): ReactElement[] => {
@@ -31,5 +53,3 @@ const DynamicRouteProvider = ({
   };
   return <Routes>{render(routes)}</Routes>;
 };
-
-export default DynamicRouteProvider;

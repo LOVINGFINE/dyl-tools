@@ -1,1 +1,1 @@
-export { default as DynamicRouteProvider } from "./route-helper";
+export * from "./route-helper";

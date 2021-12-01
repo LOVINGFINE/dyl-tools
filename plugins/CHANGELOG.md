@@ -13,3 +13,15 @@
 ## 0.0.5
 
 - todo: modify modules compiler
+
+## 0.0.6
+
+- todo: modify modules compiler
+
+## 0.0.7
+
+- todo: modify modules compiler
+
+## 0.0.8
+
+- todo: modify modules compiler
