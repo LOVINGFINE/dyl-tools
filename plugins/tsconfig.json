@@ -3,8 +3,8 @@
     "target": "es2018",
     "module": "commonjs",
     "moduleResolution": "node",
-    "outDir": "./lib",
     "esModuleInterop": true,
+    "outDir": "lib",
     "allowJs": true,
     "strict": true,
     "experimentalDecorators": true,
@@ -13,10 +13,9 @@
     "baseUrl": ".",
     "skipLibCheck": true
   },
-  "include": [
-    "modules",
-  ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "lib",
+    "__test__"
   ]
 }

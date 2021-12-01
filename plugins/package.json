@@ -1,15 +1,17 @@
 {
   "name": "dyl-plugins",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "react typescript plugins",
   "engines": {
     "node": "^10.12.0 || >=12.0.0"
   },
+  "main": "./index.js",
   "files": [
     "lib",
-    "modules"
+    "types",
+    "index.js"
   ],
-  "types": "./modules/type.d.ts",
+  "types": "./umd/type.d.ts",
   "devDependencies": {
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
@@ -21,7 +23,6 @@
     "react-loadable": "^5.5.0",
     "react-router-dom": "^6.0.2"
   },
-  "main": "./lib/index.js",
   "browserslist": {
     "production": [
       ">0.2%",

@@ -1,4 +1,3 @@
-import { Component } from "react";
 export interface DynamicRouteProviderProps {
   routes: RouteItem[];
 }

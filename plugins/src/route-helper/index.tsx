@@ -1,6 +1,6 @@
 import { lazy, ReactElement } from "react";
 import { Route, Routes, Outlet } from "react-router-dom";
-import { RouteItem, DynamicRouteProviderProps } from "../type";
+import { RouteItem, DynamicRouteProviderProps } from "../../types/route-helper";
 
 const DynamicRouteProvider = ({
   routes,
