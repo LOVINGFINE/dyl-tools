@@ -1,21 +1,15 @@
 {
-  "name": "protal",
-  "version": "1.0.2",
-  "description": "Configuration and scripts for Create React App.",
+  "name": "dyl-protal",
+  "version": "0.1.0",
+  "description": "scripts for react cli",
   "engines": {
     "node": "^10.12.0 || >=12.0.0"
-  },
-  "bugs": {
-    "url": "https://github.com/facebook/create-react-app/issues"
   },
   "files": [
     "bin",
     "config",
     "lib",
-    "scripts",
-    "template",
-    "template-typescript",
-    "utils"
+    "scripts"
   ],
   "bin": {
     "protal": "./bin/react-scripts.js"

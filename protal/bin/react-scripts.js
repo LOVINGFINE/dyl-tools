@@ -21,7 +21,6 @@ const written = require("../scripts/written");
 const scriptIndex = args.findIndex(
   (x) =>
     x === "build" ||
-    x === "eject" ||
     x === "start" ||
     x === "test" ||
     x.indexOf("written") !== -1
@@ -32,7 +31,7 @@ if (script.indexOf("written") !== -1) {
   written(script.split(":")[1]);
   return;
 }
-if (["build", "eject", "start", "test"].includes(script)) {
+if (["build", "start", "test"].includes(script)) {
   const result = spawn.sync(
     process.execPath,
     nodeArgs
