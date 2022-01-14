@@ -23,3 +23,7 @@ export interface RouteConsumerOptions {
     parent?: RouteItem;
 }
 export declare const DynamicRouteProvider: ({ routes, }: DynamicRouteProviderProps) => ReactElement;
+declare const _default: {
+    DynamicRouteProvider: ({ routes, }: DynamicRouteProviderProps) => ReactElement<any, string | import("react").JSXElementConstructor<any>>;
+};
+export default _default;

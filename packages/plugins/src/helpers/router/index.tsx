@@ -53,3 +53,7 @@ export const DynamicRouteProvider = ({
   };
   return <Routes>{render(routes)}</Routes>;
 };
+
+export default {
+  DynamicRouteProvider,
+};

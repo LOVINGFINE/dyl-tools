@@ -10,3 +10,6 @@ export const DynamicRouteProvider = ({ routes, }) => {
     };
     return _jsx(Routes, { children: render(routes) }, void 0);
 };
+export default {
+    DynamicRouteProvider,
+};

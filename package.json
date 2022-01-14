@@ -1,17 +1,20 @@
 {
   "name": "dyl",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "dyl cli tool",
   "files": [
     "bin"
   ],
-  "main": "bin/index.js",
+  "main": "bin/script.js",
   "bin": {
-    "dyl": "bin/index.js"
+    "dyl": "bin/script.js"
   },
   "dependencies": {
+    "chalk": "^5.0.0",
     "commander": "^8.3.0",
-    "ora": "^6.0.1"
+    "inquirer": "^8.2.0",
+    "ora": "^6.0.1",
+    "yaml": "^1.10.2"
   },
   "devDependencies": {}
 }

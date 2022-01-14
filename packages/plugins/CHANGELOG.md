@@ -25,3 +25,7 @@
 ## 0.0.8
 
 - todo: modify modules compiler
+
+## 0.0.8
+
+- todo: add excel worker
