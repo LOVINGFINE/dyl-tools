@@ -1,6 +1,6 @@
 {
   "name": "dyl-protal",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "scripts for react cli",
   "engines": {
     "node": "^10.12.0 || >=12.0.0"
