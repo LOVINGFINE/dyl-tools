@@ -61,7 +61,6 @@ const swSrc = paths.swSrc;
 
 // style files regexes
 const cssRegex = /\.css$/;
-const lessRegex = /\.less$/;
 const sassRegex = /\.(scss|sass)$/;
 
 const hasJsxRuntime = (() => {
@@ -136,10 +135,6 @@ module.exports = function (webpackEnv) {
           ],
           sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,
         },
-      },
-      {
-        loader: require.resolve("less-loader"),
-        options: cssOptions,
       },
     ].filter(Boolean);
     if (preProcessor) {
@@ -472,17 +467,20 @@ module.exports = function (webpackEnv) {
               sideEffects: true,
             },
             {
-              test: lessRegex,
-              use: getStyleLoaders({
-                importLoaders: 4,
-                sourceMap: isEnvProduction
-                  ? shouldUseSourceMap
-                  : isEnvDevelopment,
-              }),
-              sideEffects: true,
+              test: sassRegex,
+              use: getStyleLoaders(
+                {
+                  importLoaders: 3,
+                  sourceMap: isEnvProduction
+                    ? shouldUseSourceMap
+                    : isEnvDevelopment,
+                },
+                "sass-loader"
+              ),
             },
             {
               test: sassRegex,
+              resourceQuery: /css_modules/,
               use: getStyleLoaders(
                 {
                   importLoaders: 3,
