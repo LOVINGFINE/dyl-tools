@@ -41,3 +41,7 @@
 ## 0.1.2
 
 - todo: router props tsc
+
+## 0.1.3
+
+- todo: remove excel worker
