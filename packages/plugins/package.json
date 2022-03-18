@@ -1,6 +1,6 @@
 {
   "name": "dyl-plugins",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "typescript plugins",
   "engines": {
     "node": "^10.12.0 || >=12.0.0"

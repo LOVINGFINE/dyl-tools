@@ -37,7 +37,7 @@ export const DynamicRouteProvider = ({
           element={
             <>
               {ele.routes ? (
-                <LazyComponent routes={ele.routes} path={ele.path}>
+                <LazyComponent {...ele}>
                   <Outlet />
                 </LazyComponent>
               ) : (
