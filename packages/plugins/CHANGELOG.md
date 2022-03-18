@@ -33,3 +33,7 @@
 ## 0.1.0
 
 - todo: router props
+
+## 0.1.1
+
+- todo: router props tsc
