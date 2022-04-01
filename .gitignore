@@ -9,6 +9,9 @@ node_modules
 # production
 /build
 
+# design 
+.docz
+
 # misc
 .DS_Store
 .env.local

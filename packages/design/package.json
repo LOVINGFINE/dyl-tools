@@ -1,6 +1,36 @@
 {
   "name": "dyl-design",
-  "version": "0.0.1",
-  "main": "index.js",
-  "license": "MIT"
+  "version": "0.0.5",
+  "description": "react ui ",
+  "license": "MIT",
+  "scripts": {
+    "start": "docz dev",
+    "build": "tsc",
+    "docz:build": "docz build",
+    "docz:serve": "docz build && docz serve"
+  },
+  "main": "./lib/index.js",
+  "files": [
+    "lib/**/*"
+  ],
+  "devDependencies": {
+    "@emotion/core": "10.1.1",
+    "docz": "latest",
+    "gatsby-plugin-sass": "^5.11.1",
+    "sass": "^1.49.10",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.7.1",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "browserslist": [
+    "last 2 version",
+    "Firefox ESR",
+    "> 1%",
+    "ie >= 9"
+  ]
 }

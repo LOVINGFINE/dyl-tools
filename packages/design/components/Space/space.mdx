@@ -1,0 +1,36 @@
+---
+name: Space
+route: /Space
+menu: 组件
+---
+
+import { Playground, Props } from "docz";
+import Button from "../Button/index";
+import "../style/theme.scss";
+import Space from "./index";
+
+## Space
+
+#### 水平
+
+<Playground>
+  <Space>
+    <Button>水平</Button>
+    <Button>水平</Button>
+    <Button>水平</Button>
+  </Space>
+</Playground>
+
+#### 垂直
+
+<Playground>
+  <Space direction="column" style={{ width: 65 }}>
+    <Button>垂直</Button>
+    <Button>垂直</Button>
+    <Button>垂直</Button>
+  </Space>
+</Playground>
+
+### 参数
+
+<Props of={Space} />

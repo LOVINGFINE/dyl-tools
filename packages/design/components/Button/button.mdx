@@ -1,0 +1,36 @@
+---
+name: Button
+route: /Button
+menu: 组件
+---
+
+import { Playground, Props } from "docz";
+import Button from "./index";
+import "../style/theme.scss";
+import Space from "../Space/index";
+
+## Button
+
+#### 大小
+
+<Playground>
+  <Space>
+    <Button size="large">大号按钮</Button>
+    <Button>默认按钮</Button>
+    <Button size="small">小号按钮</Button>
+  </Space>
+</Playground>
+
+#### 主题
+
+<Playground>
+  <Space>
+    <Button type="primary">primary按钮</Button>
+    <Button type="error">error按钮</Button>
+    <Button>默认按钮</Button>
+  </Space>
+</Playground>
+
+### 参数
+
+<Props of={Button} />

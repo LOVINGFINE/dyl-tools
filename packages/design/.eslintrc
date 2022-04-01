@@ -1,0 +1,39 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "env": {
+        "browser": true
+    },
+    "globals": {
+        "React": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "detect"
+        }
+    },
+    "parserOptions": {
+        "ecmaVersion": 2019,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": [
+        "react-hooks"
+    ],
+    "rules": {
+        "@typescript-eslint/no-unused-vars": 0,
+        "@typescript-eslint/no-explicit-any": 0,
+        "@typescript-eslint/no-empty-function": 0,
+        "import/no-anonymous-default-export": 0,
+        "react-hooks/exhaustive-deps": 1,
+        "@typescript-eslint/no-empty-interface": 1,
+        "react/display-name": 1,
+        "@typescript-eslint/explicit-module-boundary-types": 0
+    }
+}
