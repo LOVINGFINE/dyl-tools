@@ -2,7 +2,7 @@
  * Created by zhangq on 2022/02/01
  * input 输入框
  */
-import React, { ReactElement, FC, CSSProperties } from "react";
+import React, { FC, CSSProperties } from "react";
 import "../styles/input.scss";
 
 /**
@@ -25,11 +25,11 @@ const Input: FC<InputProps> = ({
   change,
   onBlur,
   perfix = "dyl",
-  placeholder,
+  placeholder = "请输入",
   width,
   style = {},
   onEnter,
-}: InputProps): ReactElement => {
+}: InputProps): React.ReactElement => {
   const getStyle = () => {
     const obj = {
       ...style,

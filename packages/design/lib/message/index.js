@@ -9,10 +9,14 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import "../styles/message.scss";
+import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
+/*
+ * Created by zhangq on 2021/11/26
+ * message 组件
+ */
 import ReactDOM from "react-dom";
-import { Icon } from "../index";
+import Icon from "../Icon";
+import "../styles/message.scss";
 var setTop = function (name) {
     var body = document.getElementsByTagName("body")[0];
     var arr = [];
@@ -66,4 +70,8 @@ var Message = /** @class */ (function () {
     };
     return Message;
 }());
+export var PropsTypes = function (_a) {
+    var _b = _a.prefix, prefix = _b === void 0 ? "dyl" : _b;
+    return _jsx(_Fragment, {});
+};
 export default Message;

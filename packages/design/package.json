@@ -1,10 +1,10 @@
 {
   "name": "dyl-design",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "react ui ",
   "license": "MIT",
   "scripts": {
-    "start": "docz dev",
+    "start": "port=5000 docz dev",
     "build": "tsc",
     "docz:build": "docz build",
     "docz:serve": "docz build && docz serve"

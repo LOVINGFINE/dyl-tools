@@ -17,9 +17,9 @@ import { Fragment as _Fragment, jsx as _jsx, jsxs as _jsxs } from "react/jsx-run
 import ReactDOM from "react-dom";
 import { useEffect, useState } from "react";
 import "../styles/modal.scss";
-import { Icon } from "../index";
+import Button from "../Button";
 var Render = function (_a) {
-    var children = _a.children, _b = _a.visible, visible = _b === void 0 ? false : _b, _c = _a.width, width = _c === void 0 ? 425 : _c, _d = _a.height, height = _d === void 0 ? 550 : _d, _e = _a.zIndex, zIndex = _e === void 0 ? 1000 : _e, _f = _a.close, close = _f === void 0 ? true : _f, _g = _a.maskClose, maskClose = _g === void 0 ? true : _g, _h = _a.mask, mask = _h === void 0 ? true : _h, onClose = _a.onClose, _j = _a.prefix, prefix = _j === void 0 ? "dyl" : _j, footer = _a.footer, _k = _a.placement, placement = _k === void 0 ? "bottom-left" : _k;
+    var children = _a.children, _b = _a.visible, visible = _b === void 0 ? false : _b, _c = _a.width, width = _c === void 0 ? 425 : _c, _d = _a.height, height = _d === void 0 ? 550 : _d, _e = _a.zIndex, zIndex = _e === void 0 ? 1000 : _e, _f = _a.close, close = _f === void 0 ? true : _f, _g = _a.maskClose, maskClose = _g === void 0 ? true : _g, _h = _a.mask, mask = _h === void 0 ? true : _h, onClose = _a.onClose, _j = _a.prefix, prefix = _j === void 0 ? "dyl" : _j, footer = _a.footer, _k = _a.placement, placement = _k === void 0 ? "bottom-left" : _k, _l = _a.okProps, okProps = _l === void 0 ? {} : _l, _m = _a.cancelProps, cancelProps = _m === void 0 ? {} : _m, ok = _a.ok;
     var renderFooter = function () {
         if (footer === null) {
             return _jsx(_Fragment, {});
@@ -27,7 +27,11 @@ var Render = function (_a) {
         if (footer) {
             return footer;
         }
-        return _jsx("div", { className: "".concat(prefix, "-modal-footer") });
+        return (_jsxs("div", __assign({ className: "".concat(prefix, "-modal-footer") }, { children: [_jsx(Button, __assign({ style: { marginRight: 12 }, loading: cancelProps === null || cancelProps === void 0 ? void 0 : cancelProps.loading, onClick: function () {
+                        if (onClose) {
+                            onClose();
+                        }
+                    } }, { children: (cancelProps === null || cancelProps === void 0 ? void 0 : cancelProps.text) || "确认" })), _jsx(Button, __assign({ loading: okProps === null || okProps === void 0 ? void 0 : okProps.loading, onClick: ok, type: "primary" }, { children: (okProps === null || okProps === void 0 ? void 0 : okProps.text) || "确认" }))] })));
     };
     var renderClose = function () {
         if (typeof close === "boolean" && close) {
@@ -35,7 +39,7 @@ var Render = function (_a) {
                     if (maskClose && onClose) {
                         onClose();
                     }
-                } }, { children: _jsx(Icon, { name: "cross", fontSize: 20, color: "var(--font-color-sec)" }) })));
+                } }, { children: _jsx("span", { children: "X" }) })));
         }
         if (typeof close === "function")
             return close;

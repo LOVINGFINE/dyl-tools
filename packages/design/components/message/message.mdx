@@ -1,0 +1,37 @@
+---
+name: Message 全局提示
+route: /Message
+---
+
+import { Playground, Props } from "docz";
+import Space from "../Space/index";
+import { PropsTypes } from "./index";
+import { message, Button } from "../index";
+import "../styles/theme.scss";
+
+# Message 全局提示
+
+<Playground>
+  {() => {
+    const success = () => {
+      message.success("success");
+    };
+    const warning = () => {
+      message.warning("warning");
+    };
+    const error = () => {
+      message.error("error");
+    };
+    return (
+      <Space>
+        <Button onClick={success}>success</Button>
+        <Button onClick={warning}>warning</Button>
+        <Button onClick={error}>error</Button>
+      </Space>
+    );
+  }}
+</Playground>
+
+### 参数
+
+<Props of={PropsTypes} />

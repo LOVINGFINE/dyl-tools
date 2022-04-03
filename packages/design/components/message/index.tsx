@@ -2,11 +2,10 @@
  * Created by zhangq on 2021/11/26
  * message 组件
  */
-import React from "react";
-import "../styles/message.scss";
 import ReactDOM from "react-dom";
-import { Icon } from "../index";
-
+import Icon from "../Icon";
+import "../styles/message.scss";
+import { Playground, Props } from "docz";
 export interface MessageSuccessProps {
   zIndex?: number;
   prefix?: string;
@@ -35,7 +34,7 @@ const setTop = (name: string) => {
   return (arr.length - 1) * 55 + 15;
 };
 
-export default class Message {
+class Message {
   static success(title: string, options?: MessageSuccessProps) {
     Message.render({ title, type: "success", duration: options?.duration });
   }
@@ -86,3 +85,8 @@ export default class Message {
     }, duration);
   }
 }
+
+export const PropsTypes = ({ prefix = "dyl" }: MessageRenderProps) => {
+  return <></>;
+};
+export default Message;

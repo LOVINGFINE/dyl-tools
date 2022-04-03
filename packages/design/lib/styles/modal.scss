@@ -43,6 +43,11 @@
       height: 45px;
       background-color: var(--bg-color-side);
       border-top: 1px solid var(--border-color-sec);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 20px;
+      box-sizing: border-box;
     }
     &-mask {
       position: fixed;

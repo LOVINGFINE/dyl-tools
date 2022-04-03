@@ -1,0 +1,52 @@
+---
+name: Modal 模态框
+route: /Modal
+---
+
+import { Playground, Props } from "docz";
+import Modal from "./index";
+import "../styles/theme.scss";
+import Button from "../Button/index";
+import Space from "../Space/index";
+
+# Modal 模态框
+
+#### 基本用法
+<Playground>
+  {() => {
+    const [visible, setVisible] = React.useState(false);
+    return <div>
+    <Button type="primary" onClick={()=>setVisible(true)}>打开模态框</Button>
+    <Modal onClose={()=>setVisible(false)} visible={visible} />
+    </div>;
+  }}
+</Playground>
+
+#### 弹出方向
+<Playground>
+  {() => {
+    const [visible, setVisible] = React.useState(false);
+    const [placement, setPlacement] = React.useState("bottom-left");
+    const open = (key) => {
+       setPlacement(key);
+       setVisible(true);
+    };
+    return <div>
+    <Space>
+    <Button onClick={()=>open('left')}>left</Button>
+    <Button onClick={()=>open('top')}>top</Button>
+    <Button onClick={()=>open('right')}>right</Button>
+    <Button onClick={()=>open('bottom')}>bottom</Button>
+    <Button onClick={()=>open('bottom-right')}>bottom-right</Button>
+    <Button onClick={()=>open('bottom-left')}>bottom-left</Button>
+    <Button onClick={()=>open('top-left')}>top-left</Button>
+    <Button onClick={()=>open('top-right')}>top-right</Button>
+    </Space>
+    <Modal placement={placement} onClose={()=>setVisible(false)} visible={visible} />
+    </div>;
+  }}
+</Playground>
+
+### 参数
+
+<Props of={Modal} />

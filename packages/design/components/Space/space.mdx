@@ -1,29 +1,26 @@
 ---
-name: Space
+name: Space 间距
 route: /Space
-menu: 组件
 ---
 
 import { Playground, Props } from "docz";
 import Button from "../Button/index";
-import "../style/theme.scss";
+import "../styles/theme.scss";
 import Space from "./index";
 
-## Space
+# Space 间距
 
-#### 水平
+#### 基本用法
 
 <Playground>
+  <h4>水平</h4>
   <Space>
     <Button>水平</Button>
     <Button>水平</Button>
     <Button>水平</Button>
   </Space>
-</Playground>
-
-#### 垂直
-
-<Playground>
+  <br />
+  <h4>垂直</h4>
   <Space direction="column" style={{ width: 65 }}>
     <Button>垂直</Button>
     <Button>垂直</Button>

@@ -4,7 +4,16 @@ declare const Modal: FC<ModalProps>;
 export interface ModalProps {
     children?: React.ReactElement | React.ReactElement[] | string;
     center?: boolean;
-    footer?: null | ReactElement;
+    footer?: null | ReactElement[];
+    ok?(): void;
+    okProps?: {
+        loading?: boolean;
+        text?: string | ReactElement;
+    };
+    cancelProps?: {
+        loading?: boolean;
+        text?: string | ReactElement;
+    };
     visible?: boolean;
     zIndex?: number;
     width?: number;

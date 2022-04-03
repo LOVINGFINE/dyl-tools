@@ -1,0 +1,34 @@
+---
+name: Input 输入框
+route: /Input
+---
+
+import { Playground, Props } from "docz";
+import Input from "./index";
+import "../styles/theme.scss";
+import Space from "../Space/index";
+
+# Input 输入框
+
+#### 基本用法
+
+<Playground>
+  {() => {
+    const [input, setInput] = React.useState("");
+    const change = (e) => {
+      setInput(e);
+    };
+    return <div>
+      <Space direction="column" style={{ width: 320 }}>
+      <Input value={input} change={change}  />
+      <div>其他尺寸</div>
+        <Input size="small" value="小尺寸" />
+        <Input size="large" value="大尺寸" />
+      </Space>
+    </div>
+  }}
+</Playground>
+
+### 参数
+
+<Props of={Input} />

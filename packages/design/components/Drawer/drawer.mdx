@@ -1,0 +1,52 @@
+---
+name: Drawer 抽屉
+route: /Drawer
+---
+
+import { Playground, Props } from "docz";
+import Drawer from "./index";
+import "../styles/theme.scss";
+import Button from "../Button/index";
+import Space from "../Space/index";
+
+# Drawer 抽屉
+
+- 
+
+
+
+#### 基本用法
+<Playground>
+  {() => {
+    const [visible, setVisible] = React.useState(false);
+    return <div>
+    <Button type="primary" onClick={()=>setVisible(true)}>打开抽屉</Button>
+    <Drawer onClose={()=>setVisible(false)} visible={visible} />
+    </div>;
+  }}
+</Playground>
+
+#### 弹出方向
+<Playground>
+  {() => {
+    const [visible, setVisible] = React.useState(false);
+    const [placement, setPlacement] = React.useState("bottom-left");
+    const open = (key) => {
+       setPlacement(key);
+       setVisible(true);
+    };
+    return <div>
+    <Space>
+    <Button onClick={()=>open('left')}>left</Button>
+    <Button onClick={()=>open('top')}>top</Button>
+    <Button onClick={()=>open('right')}>right</Button>
+    <Button onClick={()=>open('bottom')}>bottom</Button>
+    </Space>
+    <Drawer placement={placement} onClose={()=>setVisible(false)} visible={visible} />
+    </div>;
+  }}
+</Playground>
+
+### 参数
+
+<Props of={Drawer} />

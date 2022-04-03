@@ -5,7 +5,7 @@
 import ReactDOM from "react-dom";
 import React, { ReactElement, FC, ReactNode, useEffect, useState } from "react";
 import "../styles/modal.scss";
-import { Icon } from "../index";
+import Button from "../Button";
 
 const Render = ({
   children,
@@ -20,6 +20,9 @@ const Render = ({
   prefix = "dyl",
   footer,
   placement = "bottom-left",
+  okProps = {},
+  cancelProps = {},
+  ok,
 }: ModalProps) => {
   const renderFooter = () => {
     if (footer === null) {
@@ -28,7 +31,24 @@ const Render = ({
     if (footer) {
       return footer;
     }
-    return <div className={`${prefix}-modal-footer`}></div>;
+    return (
+      <div className={`${prefix}-modal-footer`}>
+        <Button
+          style={{ marginRight: 12 }}
+          loading={cancelProps?.loading}
+          onClick={() => {
+            if (onClose) {
+              onClose();
+            }
+          }}
+        >
+          {cancelProps?.text || "确认"}
+        </Button>
+        <Button loading={okProps?.loading} onClick={ok} type={"primary"}>
+          {okProps?.text || "确认"}
+        </Button>
+      </div>
+    );
   };
   const renderClose = () => {
     if (typeof close === "boolean" && close) {
@@ -41,7 +61,7 @@ const Render = ({
             }
           }}
         >
-          <Icon name={"cross"} fontSize={20} color={"var(--font-color-sec)"} />
+          <span>X</span>
         </div>
       );
     }
@@ -156,7 +176,16 @@ const Modal: FC<ModalProps> = (props: ModalProps): ReactElement => {
 export interface ModalProps {
   children?: React.ReactElement | React.ReactElement[] | string;
   center?: boolean;
-  footer?: null | ReactElement;
+  footer?: null | ReactElement[];
+  ok?(): void;
+  okProps?: {
+    loading?: boolean;
+    text?: string | ReactElement;
+  };
+  cancelProps?: {
+    loading?: boolean;
+    text?: string | ReactElement;
+  };
   visible?: boolean;
   zIndex?: number;
   width?: number;

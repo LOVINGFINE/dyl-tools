@@ -9,12 +9,12 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-import { jsx as _jsx } from "react/jsx-runtime";
+import { jsx as _jsx, Fragment as _Fragment } from "react/jsx-runtime";
 import unicodes from "./font-unicode.json";
 import "../styles/icon.scss";
+var types = unicodes;
 var Icon = function (_a) {
     var fontSize = _a.fontSize, color = _a.color, name = _a.name, className = _a.className, onClick = _a.onClick, _b = _a.prefix, prefix = _b === void 0 ? "dyl" : _b;
-    var types = unicodes;
     var getStyle = function () {
         var temp = {};
         if (fontSize) {
@@ -31,10 +31,10 @@ var Icon = function (_a) {
         }
         return "".concat(prefix, "-icon-font");
     };
-    return (_jsx("i", __assign({ className: getClassName(), onClick: function (e) {
+    return name && types[name] ? (_jsx("i", __assign({ className: getClassName(), onClick: function (e) {
             if (onClick) {
                 onClick(e);
             }
-        }, style: getStyle() }, { children: types[name || ""] || "" })));
+        }, style: getStyle() }, { children: types[name] }))) : (_jsx(_Fragment, {}));
 };
 export default Icon;

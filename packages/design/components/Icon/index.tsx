@@ -1,6 +1,7 @@
-import React, { FC, ReactElement } from "react";
+import React, { FC } from "react";
 import unicodes from "./font-unicode.json";
 import "../styles/icon.scss";
+const types = unicodes as any;
 
 export interface IconProps {
   fontSize?: number;
@@ -10,7 +11,6 @@ export interface IconProps {
   prefix?: string;
   onClick?(e: MouseEvent): void;
 }
-
 const Icon: FC<IconProps> = ({
   fontSize,
   color,
@@ -18,8 +18,7 @@ const Icon: FC<IconProps> = ({
   className,
   onClick,
   prefix = "dyl",
-}: IconProps): ReactElement => {
-  const types = unicodes as any;
+}: IconProps): React.ReactElement => {
   const getStyle = () => {
     const temp: any = {};
     if (fontSize) {
@@ -36,7 +35,7 @@ const Icon: FC<IconProps> = ({
     }
     return `${prefix}-icon-font`;
   };
-  return (
+  return name && types[name] ? (
     <i
       className={getClassName()}
       onClick={(e: any) => {
@@ -46,8 +45,10 @@ const Icon: FC<IconProps> = ({
       }}
       style={getStyle()}
     >
-      {types[name || ""] || ""}
+      {types[name]}
     </i>
+  ) : (
+    <></>
   );
 };
 

@@ -1,0 +1,49 @@
+---
+name: Dropdown 下拉菜单
+route: /Dropdown
+---
+
+import { Playground, Props } from "docz";
+import { Dropdown, Button, Space } from "../index";
+import "../styles/theme.scss";
+
+# Dropdown 下拉菜单
+
+#### 基本用法
+<Playground>
+  {() => {
+    return <div>
+    <Dropdown>
+    <Button type="primary">点击打开下拉菜单</Button>
+    </Dropdown>
+    </div>;
+  }}
+</Playground>
+
+#### 弹出方向
+<Playground>
+  {() => {
+    const [visible, setVisible] = React.useState(false);
+    const [placement, setPlacement] = React.useState("bottom-left");
+    const open = (key) => {
+       setPlacement(key);
+       setVisible(true);
+    };
+    return <div>
+    <Space>
+    <Button onClick={()=>open('left')}>left</Button>
+    <Button onClick={()=>open('top')}>top</Button>
+    <Button onClick={()=>open('right')}>right</Button>
+    <Button onClick={()=>open('bottom')}>bottom</Button>
+    <Button onClick={()=>open('bottom-right')}>bottom-right</Button>
+    <Button onClick={()=>open('bottom-left')}>bottom-left</Button>
+    <Button onClick={()=>open('top-left')}>top-left</Button>
+    <Button onClick={()=>open('top-right')}>top-right</Button>
+    </Space>
+    </div>;
+  }}
+</Playground>
+
+### 参数
+
+<Props of={Dropdown} />

@@ -9,5 +9,7 @@ export interface ButtonProps {
     onClick?(e: MouseEvent): void;
     disabled?: boolean;
     prefix?: string;
+    loading?: boolean;
+    icon?: string;
 }
 export default Button;

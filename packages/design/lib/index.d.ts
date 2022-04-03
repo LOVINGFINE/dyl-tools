@@ -16,6 +16,7 @@ export { default as Tooltip } from "./Tooltip";
 export { default as VirtualScroll } from "./VirtualScroll";
 export { default as VirtualTree } from "./VirtualTree";
 export { default as message } from "./message";
+export { default as Dropdown } from "./Dropdown";
 declare const _default: {
     Button: import("react").FC<import("./Button").ButtonProps>;
     Drawer: import("react").FC<import("./Drawer").DrawerProps>;
@@ -32,5 +33,6 @@ declare const _default: {
     VirtualScroll: import("react").FC<import("./VirtualScroll").VirtualScrollProps>;
     VirtualTree: import("react").FC<import("./VirtualTree").VirtualTreeProps>;
     message: typeof message;
+    Dropdown: import("react").FC<import("./Dropdown").DropdownProps>;
 };
 export default _default;

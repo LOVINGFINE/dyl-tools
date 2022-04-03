@@ -12,7 +12,7 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx } from "react/jsx-runtime";
 import "../styles/input.scss";
 var Input = function (_a) {
-    var _b = _a.value, value = _b === void 0 ? "" : _b, _c = _a.size, size = _c === void 0 ? "default" : _c, change = _a.change, onBlur = _a.onBlur, _d = _a.perfix, perfix = _d === void 0 ? "dyl" : _d, placeholder = _a.placeholder, width = _a.width, _e = _a.style, style = _e === void 0 ? {} : _e, onEnter = _a.onEnter;
+    var _b = _a.value, value = _b === void 0 ? "" : _b, _c = _a.size, size = _c === void 0 ? "default" : _c, change = _a.change, onBlur = _a.onBlur, _d = _a.perfix, perfix = _d === void 0 ? "dyl" : _d, _e = _a.placeholder, placeholder = _e === void 0 ? "请输入" : _e, width = _a.width, _f = _a.style, style = _f === void 0 ? {} : _f, onEnter = _a.onEnter;
     var getStyle = function () {
         var obj = __assign({}, style);
         if (width) {

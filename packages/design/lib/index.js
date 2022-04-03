@@ -13,6 +13,7 @@ import Tooltip from "./Tooltip";
 import VirtualScroll from "./VirtualScroll";
 import VirtualTree from "./VirtualTree";
 import message from "./message";
+import Dropdown from "./Dropdown";
 export { default as Button } from "./Button";
 export { default as Drawer } from "./Drawer";
 export { default as Empty } from "./Empty";
@@ -28,6 +29,7 @@ export { default as Tooltip } from "./Tooltip";
 export { default as VirtualScroll } from "./VirtualScroll";
 export { default as VirtualTree } from "./VirtualTree";
 export { default as message } from "./message";
+export { default as Dropdown } from "./Dropdown";
 export default {
     Button: Button,
     Drawer: Drawer,
@@ -44,4 +46,5 @@ export default {
     VirtualScroll: VirtualScroll,
     VirtualTree: VirtualTree,
     message: message,
+    Dropdown: Dropdown,
 };
