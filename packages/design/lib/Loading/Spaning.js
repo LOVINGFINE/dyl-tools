@@ -10,7 +10,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import "./loading.scss";
+import "../styles/loading.scss";
 var Spaning = function () {
     /** render */
     return (_jsx("div", __assign({ style: {

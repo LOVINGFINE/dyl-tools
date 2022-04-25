@@ -45,3 +45,11 @@
 ## 0.1.3
 
 - todo: remove excel worker
+
+## 0.1.4
+
+- todo: add document title set
+
+## 0.1.5
+
+- todo: tsc add document title set

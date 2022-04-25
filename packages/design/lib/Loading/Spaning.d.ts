@@ -1,4 +1,4 @@
 import { ReactElement } from "react";
-import "./loading.scss";
+import "../styles/loading.scss";
 declare const Spaning: () => ReactElement;
 export default Spaning;

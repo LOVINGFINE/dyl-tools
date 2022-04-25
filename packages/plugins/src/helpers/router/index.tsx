@@ -1,5 +1,5 @@
 import { lazy, ReactElement } from "react";
-import { Route, Routes, Outlet } from "react-router-dom";
+import { Route, Routes, Outlet, useMatch, useNavigate } from "react-router-dom";
 
 export interface DynamicRouteProviderProps {
   routes: RouteItem[];
@@ -27,8 +27,16 @@ export interface RouteConsumerOptions {
 export const DynamicRouteProvider = ({
   routes,
 }: DynamicRouteProviderProps): ReactElement => {
+  const navigate = useNavigate();
   const render = (list: RouteItem[]): ReactElement[] => {
     return list.map((ele: RouteItem, i: number) => {
+      const match = useMatch(ele.path || "");
+      if (ele.path && match) {
+        document.title = ele.title || "";
+        if (ele.redirect && ele.path !== ele.redirect) {
+          navigate(ele.redirect, { replace: true });
+        }
+      }
       const LazyComponent = lazy(() => import(`@/${ele.component}`));
       return (
         <Route

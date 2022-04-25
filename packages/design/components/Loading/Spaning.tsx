@@ -3,7 +3,7 @@
  * Spaning
  */
 import React, { ReactElement } from "react";
-import "./loading.scss";
+import "../styles/loading.scss";
 const Spaning = (): ReactElement => {
   /** render */
   return (
