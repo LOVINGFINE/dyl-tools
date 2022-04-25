@@ -53,3 +53,15 @@
 ## 0.1.5
 
 - todo: tsc add document title set
+
+## 0.1.6
+
+- todo: tsc add document title set
+
+## 0.1.7
+
+- todo: tsc add document title set
+
+## 0.1.8
+
+- todo: tsc add document title set

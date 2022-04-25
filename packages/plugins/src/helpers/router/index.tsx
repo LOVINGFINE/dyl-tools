@@ -1,4 +1,4 @@
-import { lazy, ReactElement } from "react";
+import { lazy, ReactElement, useEffect } from "react";
 import { Route, Routes, Outlet, useMatch, useNavigate } from "react-router-dom";
 
 export interface DynamicRouteProviderProps {
@@ -24,39 +24,54 @@ export interface RouteConsumerOptions {
   redirect?: string;
   parent?: RouteItem;
 }
+
+export const RouterItem = ({
+  route,
+  render,
+  key,
+}: {
+  key: string;
+  route: RouteItem;
+  render(list: RouteItem[]): ReactElement[];
+}) => {
+  const navigate = useNavigate();
+  const match = useMatch(route.path || "");
+  useEffect(() => {
+    if (route.path && match) {
+      document.title = route.title || "";
+      if (route.redirect && route.path !== route.redirect) {
+        navigate(route.redirect, { replace: true });
+      }
+    }
+  }, []);
+  const LazyComponent = lazy(() => import(`@/${route.component}`));
+  return (
+    <Route
+      key={key}
+      path={route.path || "*"}
+      element={
+        <>
+          {route.routes ? (
+            <LazyComponent {...route}>
+              <Outlet />
+            </LazyComponent>
+          ) : (
+            <LazyComponent />
+          )}
+        </>
+      }
+    >
+      {route.routes ? render(route.routes) : undefined}
+    </Route>
+  );
+};
+
 export const DynamicRouteProvider = ({
   routes,
 }: DynamicRouteProviderProps): ReactElement => {
-  const navigate = useNavigate();
   const render = (list: RouteItem[]): ReactElement[] => {
     return list.map((ele: RouteItem, i: number) => {
-      const match = useMatch(ele.path || "");
-      if (ele.path && match) {
-        document.title = ele.title || "";
-        if (ele.redirect && ele.path !== ele.redirect) {
-          navigate(ele.redirect, { replace: true });
-        }
-      }
-      const LazyComponent = lazy(() => import(`@/${ele.component}`));
-      return (
-        <Route
-          key={ele.name || "key-" + i}
-          path={ele.path || "*"}
-          element={
-            <>
-              {ele.routes ? (
-                <LazyComponent {...ele}>
-                  <Outlet />
-                </LazyComponent>
-              ) : (
-                <LazyComponent />
-              )}
-            </>
-          }
-        >
-          {ele.routes ? render(ele.routes) : undefined}
-        </Route>
-      );
+      return RouterItem({ key: ele.name || "key-" + i, route: ele, render });
     });
   };
   return <Routes>{render(routes)}</Routes>;

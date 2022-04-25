@@ -22,6 +22,11 @@ export interface RouteConsumerOptions {
     redirect?: string;
     parent?: RouteItem;
 }
+export declare const RouterItem: ({ route, render, key, }: {
+    key: string;
+    route: RouteItem;
+    render(list: RouteItem[]): ReactElement[];
+}) => JSX.Element;
 export declare const DynamicRouteProvider: ({ routes, }: DynamicRouteProviderProps) => ReactElement;
 declare const _default: {
     DynamicRouteProvider: ({ routes, }: DynamicRouteProviderProps) => ReactElement<any, string | import("react").JSXElementConstructor<any>>;
